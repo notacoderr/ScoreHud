@@ -158,32 +158,32 @@ class Main extends PluginBase{
 				switch($value)
 				{
 					case "rank":
-						$rank = $cx2->elo->getRank($player);
-						if(($rank === null) || ($rank === ""))
+						$i = $cx2->elo->getRank($player);
+						if(($i === null) || ($i === ""))
 						{
 							return "N/A";
 						} else {
-							return $rank;
+							return $i;
 						}
 					break;
 						
 					case "div":
-						$div = $cx2->elo->getDiv($player);
-						if(($div === null) || (!is_numeric($i)))
+						$i = $cx2->elo->getDiv($player);
+						if(($i === null) || (!is_numeric($i)))
 						{
 							return "N/A";
 						} else {
-							return $div;
+							return $i;
 						}
 					break;
 						
 					case "pts":
-						$pts = $cx2->elo->getPoints($player);
-						if(($pts === null) || (!is_numeric($i)))
+						$i = $cx2->elo->getPoints($player);
+						if(($i === null) || (!is_numeric($i)))
 						{
 							return "N/A";
 						} else {
-							return $pts;
+							return $i;
 						}
 					break;
 						
