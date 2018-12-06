@@ -169,7 +169,7 @@ class Main extends PluginBase{
 						
 					case "div":
 						$div = $cx2->elo->getDiv($player);
-						if(($div === null) || ($div === ""))
+						if(($div === null) || (!is_numeric($i)))
 						{
 							return "N/A";
 						} else {
@@ -179,7 +179,7 @@ class Main extends PluginBase{
 						
 					case "pts":
 						$pts = $cx2->elo->getPoints($player);
-						if(($pts === null) || ($pts === ""))
+						if(($pts === null) || (!is_numeric($i)))
 						{
 							return "N/A";
 						} else {
@@ -189,7 +189,7 @@ class Main extends PluginBase{
 						
 					case "lvl":
 						$i = $cx2->data->getVal($player, "level");
-						if(($i === null) || ($$i === ""))
+						if(($i === null) || (!is_numeric($i)))
 						{
 							return "N/A";
 						} else {
@@ -199,7 +199,7 @@ class Main extends PluginBase{
 						
 					case "exp":
 						$i = $cx2->data->getVal($player, "exp");
-						if(($i === null) || ($$i === ""))
+						if(($i === null) || (!is_numeric($i)))
 						{
 							return "N/A";
 						} else {
@@ -213,7 +213,7 @@ class Main extends PluginBase{
 					
 					case "gems":
 						$i = $cx2->data->getVal($player, "gems");
-						if(($i === null) || ($$i === ""))
+						if(($i === null) || (!is_numeric($i)))
 						{
 							return "N/A";
 						} else {
