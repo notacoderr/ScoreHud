@@ -158,60 +158,66 @@ class Main extends PluginBase{
 				switch($value)
 				{
 					case "rank":
-						if(is_string($cx2->elo->getRank($player)))
+						$rank = $cx2->elo->getRank($player);
+						if(($rank === null) || ($rank === ""))
 						{
-							return (string) $cx2->elo->getRank($player);
-						} else {
 							return "N/A";
+						} else {
+							return $rank;
 						}
 					break;
 						
 					case "div":
-						if(is_numeric( $cx2->elo->getDiv($player) ))
+						$div = $cx2->elo->getDiv($player);
+						if(($div === null) || ($div === ""))
 						{
-							return (int) $cx2->elo->getDiv($player);
-						} else {
 							return "N/A";
+						} else {
+							return $div;
 						}
 					break;
 						
 					case "pts":
-						if(is_numeric( $cx2->elo->getPoints($player) ))
+						$pts = $cx2->elo->getPoints($player);
+						if(($pts === null) || ($pts === ""))
 						{
-							return (int) $cx2->elo->getPoints($player);
-						} else {
 							return "N/A";
+						} else {
+							return $pts;
 						}
 					break;
 						
 					case "lvl":
-						if(is_numeric( $cx2->data->getVal($player, "level") ))
+						$i = $cx2->data->getVal($player, "level");
+						if(($i === null) || ($$i === ""))
 						{
-							return (int) $cx2->data->getVal($player, "level");
-						} else {
 							return "N/A";
+						} else {
+							return $i;
 						}
 					break;
 						
 					case "exp":
-						if(is_numeric( $cx2->data->getVal($player, "exp") ))
+						$i = $cx2->data->getVal($player, "exp");
+						if(($i === null) || ($$i === ""))
 						{
-							return (int) $cx2->data->getVal($player, "exp");
-						} else {
 							return "N/A";
+						} else {
+							return $i;
 						}
 					break;
 						
 					case "mexp":
-						return (int) $cx2->settings->get("baseExp");
+						return $cx2->settings->get("baseExp");
 					break;
 					
 					case "gems":
-						if(is_numeric( $cx2->data->getVal($player, "gems") ))
+						$i = $cx2->data->getVal($player, "gems");
+						if(($i === null) || ($$i === ""))
 						{
-							return (int) $cx2->data->getVal($player, "gems");
-						} else {
 							return "N/A";
+						} else {
+							return $i;
 						}
 					break;
 					
